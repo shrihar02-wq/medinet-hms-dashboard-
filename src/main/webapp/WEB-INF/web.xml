@@ -1,120 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
-    <servlet>
-        <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>RegisterServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>AppointmentServlet</servlet-name>
-        <servlet-class>AppointmentServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>AIServlet</servlet-name>
-        <servlet-class>AIServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ReportServlet</servlet-name>
-        <servlet-class>ReportServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ReminderServlet</servlet-name>
-        <servlet-class>ReminderServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>DoctorProfileServlet</servlet-name>
-        <servlet-class>DoctorProfileServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>TodayAppointmentServlet</servlet-name>
-        <servlet-class>TodayAppointmentServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>BookAppointmentServlet</servlet-name>
-        <servlet-class>BookAppointmentServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>PatientsDetailsServlet</servlet-name>
-        <servlet-class>PatientsDetailsServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ManageAppointmentServlet</servlet-name>
-        <servlet-class>ManageAppointmentServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>UploadPrescriptionServlet</servlet-name>
-        <servlet-class>UploadPrescriptionServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>MedicineSuggestionServlet</servlet-name>
-        <servlet-class>MedicineSuggestionServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>PatientReportsServlet</servlet-name>
-        <servlet-class>PatientReportsServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>NotificationServlet</servlet-name>
-        <servlet-class>NotificationServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>RegisterServlet</servlet-name>
-        <url-pattern>/RegisterServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AppointmentServlet</servlet-name>
-        <url-pattern>/AppointmentServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AIServlet</servlet-name>
-        <url-pattern>/AIServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ReportServlet</servlet-name>
-        <url-pattern>/ReportServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ReminderServlet</servlet-name>
-        <url-pattern>/ReminderServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>DoctorProfileServlet</servlet-name>
-        <url-pattern>/DoctorProfileServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>TodayAppointmentServlet</servlet-name>
-        <url-pattern>/TodayAppointmentServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>BookAppointmentServlet</servlet-name>
-        <url-pattern>/BookAppointmentServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>PatientsDetailsServlet</servlet-name>
-        <url-pattern>/PatientsDetailsServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ManageAppointmentServlet</servlet-name>
-        <url-pattern>/ManageAppointmentServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>UploadPrescriptionServlet</servlet-name>
-        <url-pattern>/UploadPrescriptionServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>MedicineSuggestionServlet</servlet-name>
-        <url-pattern>/MedicineSuggestionServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>PatientReportsServlet</servlet-name>
-        <url-pattern>/PatientReportsServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>NotificationServlet</servlet-name>
-        <url-pattern>/NotificationServlet</url-pattern>
-    </servlet-mapping>
+
+<web-app version="4.0"
+xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="
+http://xmlns.jcp.org/xml/ns/javaee
+http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+
     <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
+        <session-timeout>30</session-timeout>
     </session-config>
+
 </web-app>
