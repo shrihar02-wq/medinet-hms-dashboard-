@@ -1,0 +1,42 @@
+<form action="AppointmentServlet" method="post">
+
+<input type="text"
+       name="patient_name"
+       placeholder="Patient Name"
+       required>
+
+<select name="doctor_name" required>
+
+<option value="">
+Select Doctor
+</option>
+
+<option>
+Dr. Sharma
+</option>
+
+<option>
+Dr. Priya
+</option>
+
+</select>
+
+<input type="date"
+       name="appointment_date"
+       required>
+
+<input type="time"
+       name="appointment_time"
+       required>
+
+<textarea name="symptoms"
+placeholder="Enter Symptoms">
+</textarea>
+
+<button type="submit">
+
+Book Appointment
+
+</button>
+
+</form>

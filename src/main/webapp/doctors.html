@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Doctor Directory - MediNet HMS</title>
+<link rel="icon" href="logo.jpeg">
+
+<link rel="stylesheet" href="doctors.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<script src="auth.js"></script>
+<script>checkAuth();</script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+   <!-- Logo -->
+  <div class="logo-box">
+    <i class="fa-solid fa-heart-pulse logo-icon"></i>
+    <span class="logo-text">MediNet HMS</span>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#services">Services</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+</div>
+</nav>
+
+<!-- MAIN -->
+<div class="container">
+
+  <div class="header">
+    <h1>Doctor Directory</h1>
+<p>
+Explore our experienced medical specialists from different departments.
+View doctor expertise, specialties, and years of experience to choose
+the right healthcare professional for your treatment needs.
+</p>  </div>
+
+  <!-- STATS -->
+  <!-- STATS -->
+<div class="stats">
+
+  <div class="stat">
+    <h2>6+</h2>
+    <p>Professional Doctors</p>
+  </div>
+
+  <div class="stat">
+    <h2>6</h2>
+    <p>Medical Specialties</p>
+  </div>
+
+  <div class="stat">
+    <h2>11+</h2>
+    <p>Years Average Experience</p>
+  </div>
+
+</div>
+
+  <!-- SEARCH -->
+  <div class="top-bar">
+    <input type="text" placeholder="🔍 Search doctor or specialty...">
+    <button onclick="addDoctor()"><i class="fa fa-plus"></i> Add Doctor</button>
+  </div>
+
+  <!-- DOCTOR GRID -->
+  <div class="doctor-grid" id="doctorList">
+
+    <div class="card">
+      <h3>Dr. Anjali Sharma</h3>
+      <span class="tag">Cardiology</span>
+      <p>12 Years Experience</p>
+    </div>
+
+    <div class="card">
+      <h3>Dr. Rajesh Patel</h3>
+      <span class="tag">Orthopedics</span>
+      <p>9 Years Experience</p>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  © 2026 MediNet Hospital Management System
+</footer>
+
+<script src="doctor.js"></script>
+</body>
+</html>

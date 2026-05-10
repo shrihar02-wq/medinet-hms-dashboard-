@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Patient Registration</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css" type="text/css"/>
+
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* BODY */
+
+/* BODY */
+
+body{
+
+    background:
+    linear-gradient(
+    135deg,
+    #eaf1ff,
+    #f4f8ff,
+    #ffffff);
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow-y:auto;
+
+    padding:40px 0;
+
+    position:relative;
+}
+
+/* BACKGROUND GLOW */
+
+body::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:
+    rgba(47,111,237,0.12);
+
+    top:-180px;
+    left:-150px;
+
+    filter:blur(45px);
+}
+
+body::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    border-radius:50%;
+
+    background:
+    rgba(74,141,246,0.14);
+
+    bottom:-180px;
+    right:-140px;
+
+    filter:blur(45px);
+}
+
+/* REGISTER CARD */
+
+.register-card{
+
+    width:430px;
+
+    background:
+    rgba(255,255,255,0.72);
+
+    backdrop-filter:blur(20px);
+
+    padding:45px 40px;
+
+    margin:40px 0;
+
+    border-radius:30px;
+
+    border:
+    1px solid rgba(255,255,255,0.5);
+
+    box-shadow:
+    0 20px 45px rgba(47,111,237,0.16);
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:0.45s ease;
+
+    z-index:2;
+}
+/* TOP GLOW LINE */
+
+.register-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:6px;
+
+    background:
+    linear-gradient(
+    to right,
+    #2f6fed,
+    #4a8df6,
+    #7db4ff);
+}
+
+/* CARD HOVER */
+
+.register-card:hover{
+
+    transform:
+    translateY(-10px)
+    scale(1.01);
+
+    box-shadow:
+    0 30px 65px rgba(47,111,237,0.25);
+}
+
+/* TITLE */
+
+.register-card h2{
+
+    text-align:center;
+
+    color:#2f6fed;
+
+    margin-bottom:28px;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+}
+
+/* INPUTS */
+
+input,
+select{
+
+    width:100%;
+
+    padding:15px 18px;
+
+    margin:12px 0;
+
+    border-radius:18px;
+
+    border:
+    1px solid rgba(47,111,237,0.15);
+
+    outline:none;
+
+    font-size:15px;
+
+    color:#2f3b55;
+
+    background:
+    rgba(255,255,255,0.9);
+
+    transition:0.35s ease;
+
+    box-shadow:
+    inset 0 2px 8px rgba(255,255,255,0.8),
+    0 5px 15px rgba(47,111,237,0.05);
+}
+
+/* PLACEHOLDER */
+
+input::placeholder{
+    color:#8a94a6;
+}
+
+/* INPUT FOCUS */
+
+input:focus,
+select:focus{
+
+    border-color:#2f6fed;
+
+    background:white;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 0 0 4px rgba(47,111,237,0.12),
+    0 10px 24px rgba(47,111,237,0.14);
+}
+
+/* SELECT BOX */
+
+select{
+
+    cursor:pointer;
+
+    appearance:none;
+
+    background-image:
+    linear-gradient(45deg,transparent 50%,#2f6fed 50%),
+    linear-gradient(135deg,#2f6fed 50%,transparent 50%),
+    linear-gradient(to right,#dbeafe,#dbeafe);
+
+    background-position:
+    calc(100% - 22px) calc(50% - 3px),
+    calc(100% - 16px) calc(50% - 3px),
+    calc(100% - 48px) 50%;
+
+    background-size:
+    7px 7px,
+    7px 7px,
+    1px 24px;
+
+    background-repeat:no-repeat;
+}
+
+/* SELECT HOVER */
+
+select:hover{
+
+    box-shadow:
+    0 10px 22px rgba(47,111,237,0.12);
+}
+
+/* BUTTON */
+
+button{
+
+    width:100%;
+
+    padding:16px;
+
+    margin-top:24px;
+
+    margin-bottom:8px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #2f6fed,
+    #4a8df6);
+
+    color:white;
+
+    font-weight:600;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    letter-spacing:0.5px;
+
+    transition:0.35s ease;
+
+    box-shadow:
+    0 10px 25px rgba(47,111,237,0.22);
+}
+
+/* BUTTON HOVER */
+
+button:hover{
+
+    transform:
+    translateY(-4px)
+    scale(1.02);
+
+    background:
+    linear-gradient(
+    135deg,
+    #2563eb,
+    #60a5fa);
+
+    box-shadow:
+    0 18px 35px rgba(47,111,237,0.35);
+}
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+.register-card{
+
+    width:92%;
+
+    padding:30px;
+}
+
+.register-card h2{
+
+    font-size:28px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="register-card">
+
+<h2>Patient Registration</h2>
+
+<form action="RegisterServlet" method="post">
+
+<input type="text"
+name="name"
+placeholder="Full Name"
+required>
+
+<input type="email"
+name="email"
+placeholder="Email Address"
+required>
+<p id="emailError" style="color:red;"></p>
+<input type="number"
+name="age"
+placeholder="Age"
+required>
+
+<select name="gender" required>
+<option value="">Select Gender</option>
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+</select>
+
+<input type="text"
+name="phone"
+placeholder="Phone Number"
+required>
+<p id="phoneError" style="color:red;"></p>
+<select name="bloodgroup" required>
+
+<option value="">Blood Group</option>
+
+<option>A+</option>
+<option>A-</option>
+<option>B+</option>
+<option>B-</option>
+<option>AB+</option>
+<option>AB-</option>
+<option>O+</option>
+<option>O-</option>
+
+</select>
+
+<input type="password"
+name="password"
+placeholder="Create Password"
+required>
+
+<button type="submit">
+Register
+</button>
+<script>
+const params = new URLSearchParams(window.location.search);
+
+if (params.get("error") === "email") {
+    document.getElementById("emailError").innerText = "Email already exists!";
+}
+
+if (params.get("error") === "phone") {
+    document.getElementById("phoneError").innerText = "Phone number already exists!";
+}
+</script>
+</form>
+
+</div>
+
+</body>
+</html>

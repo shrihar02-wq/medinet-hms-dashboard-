@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MediNet HMS - Appointments</title>
+
+<link rel="icon" href="logo.jpeg">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+body {
+  background: #f4f6f9;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #2f6fed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  color: white;
+  z-index: 1000;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #2f6fed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  color: white;
+  z-index: 1000;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  font-size: 24px;
+  color: #fff;
+  background: linear-gradient(45deg, #ffffff, #cce0ff);
+  padding: 8px;
+  border-radius: 50%;
+  color: #2f6fed;
+  box-shadow: 0 0 10px rgba(255,255,255,0.6);
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}.login-btn {
+  background: linear-gradient(45deg, #ffffff, #dbe7ff);
+  color: #2f6fed;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+/* Hover Glow Effect */
+.login-btn:hover {
+  background: #2f6fed;
+  color: white;
+  box-shadow: 0 0 15px #fff, 0 0 25px #4a8df6;
+  transform: scale(1.05);
+}
+
+/* Click Effect */
+.login-btn:active {
+  transform: scale(0.95);
+}
+.btn {
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  box-shadow: 0 0 15px rgba(255,255,255,0.6);
+  transform: translateY(-2px);
+}
+
+.nav-links a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  border-bottom: 2px solid white;
+}
+
+/* CONTAINER */
+.container{
+  padding:100px 40px;
+}
+
+.subtitle{
+  color:gray;
+  margin-bottom:20px;
+}
+
+/* CARD */
+.card{
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  margin-bottom:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+/* 🔥 BOOKING CARD */
+.booking-card{
+  background:linear-gradient(135deg,#ffffff,#f1f5ff);
+  border:1px solid #e0e7ff;
+}
+
+/* INPUT GROUP */
+.input-group{
+  display:flex;
+  flex-direction:column;
+  margin-bottom:10px;
+}
+
+.input-group label{
+  font-size:14px;
+  margin-bottom:5px;
+}
+
+label i{
+  color:#2f6fed;
+  margin-right:5px;
+}
+
+/* INPUT */
+input,select{
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #dbeafe;
+  background:#f9fbff;
+  transition:0.3s;
+}
+
+input:focus,select:focus{
+  outline:none;
+  border-color:#2f6fed;
+  box-shadow:0 0 10px rgba(47,111,237,0.2);
+}
+
+/* ROW */
+.row{
+  display:flex;
+  gap:10px;
+}
+
+/* BUTTON */
+.book-btn{
+  margin-top:15px;
+  background:linear-gradient(45deg,#2f6fed,#4facfe);
+  color:white;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.book-btn:hover{
+  transform:translateY(-3px) scale(1.02);
+  box-shadow:0 10px 25px rgba(47,111,237,0.4);
+}
+
+/* 🔥 APPOINTMENT CARD */
+.appointment-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:18px;
+  margin-top:15px;
+
+  border-radius:16px;
+
+  background:linear-gradient(135deg,#ffffff,#f1f5ff);
+  border:1px solid #e0e7ff;
+
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.appointment-item:hover{
+  transform:translateY(-6px) scale(1.01);
+  box-shadow:0 20px 40px rgba(47,111,237,0.25);
+}
+
+/* LEFT */
+.app-left{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.icon-box{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(45deg,#2f6fed,#00c6ff);
+  color:white;
+}
+
+.app-name{
+  font-size:17px;
+  font-weight:600;
+  color:#2f6fed;
+}
+
+.app-doctor{
+  font-size:14px;
+  color:#555;
+}
+
+/* RIGHT */
+.app-right{
+  text-align:right;
+}
+
+.app-date,.app-time{
+  font-size:14px;
+}
+
+/* EMPTY */
+.empty{
+  text-align:center;
+  padding:30px;
+  color:gray;
+}
+
+.empty-icon{
+  font-size:40px;
+  margin-bottom:10px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  background:#2f6fed;
+  color:white;
+  padding:15px;
+  margin-top:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+   <!-- Logo -->
+  <div class="logo-box">
+    <i class="fa-solid fa-heart-pulse logo-icon"></i>
+    <span class="logo-text">MediNet HMS</span>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="patients.html">Patients</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="appointments.html">Appointments</a>
+    <a href="Reminder.html">Reminders</a>
+    <a href="index.html">About</a>
+  </div>
+</nav>
+
+
+<div class="container">
+
+  <h1><i class="fa-solid fa-calendar-check"></i> Appointments</h1>
+  <p class="subtitle">Schedule and manage patient appointments.</p>
+
+  <!-- BOOKING -->
+  <div class="card booking-card">
+
+    <h2><i class="fa-solid fa-calendar-plus"></i> Book Appointment</h2>
+
+    <form id="appointmentForm">
+
+      <div class="input-group">
+        <label><i class="fa-solid fa-user"></i> Patient Name</label>
+        <input type="text" id="patientName" required>
+      </div>
+
+      <div class="input-group">
+        <label><i class="fa-solid fa-user-doctor"></i> Doctor</label>
+        <select id="doctorName" required>
+          <option value="">Choose Doctor</option>
+          <option>Dr. Anjali Sharma</option>
+          <option>Dr. Rajesh Patel</option>
+          <option>Dr. Priya Nair</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <div class="input-group">
+          <label><i class="fa-solid fa-calendar-days"></i> Date</label>
+          <input type="date" id="date" required>
+        </div>
+
+        <div class="input-group">
+          <label><i class="fa-solid fa-clock"></i> Time</label>
+          <input type="time" id="time" required>
+        </div>
+      </div>
+
+      <button type="submit" class="book-btn">
+        <i class="fa-solid fa-check"></i> Book Appointment
+      </button>
+
+    </form>
+  </div>
+
+  <!-- LIST -->
+  <div class="card">
+    <h2><i class="fa-solid fa-calendar-check"></i> Scheduled Appointments</h2>
+
+    <div id="appointmentsList" class="empty">
+      <p>
+        <i class="fa-regular fa-calendar-xmark empty-icon"></i><br>
+        No appointments yet
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 MediNet Hospital Management System
+</footer>
+
+<!-- JS -->
+<script>
+
+document.getElementById("appointmentForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let name = document.getElementById("patientName").value;
+  let doctor = document.getElementById("doctorName").value;
+  let date = document.getElementById("date").value;
+  let time = document.getElementById("time").value;
+
+  let list = document.getElementById("appointmentsList");
+
+  if(list.classList.contains("empty")){
+    list.innerHTML="";
+    list.classList.remove("empty");
+  }
+
+  let card = document.createElement("div");
+  card.className="appointment-item";
+
+  card.innerHTML = `
+    <div class="app-left">
+      <div class="icon-box">
+        <i class="fa-solid fa-user"></i>
+      </div>
+
+      <div>
+        <div class="app-name">${name}</div>
+        <div class="app-doctor">
+          <i class="fa-solid fa-user-doctor"></i> ${doctor}
+        </div>
+      </div>
+    </div>
+
+    <div class="app-right">
+      <div class="app-date">
+        <i class="fa-solid fa-calendar-days"></i> ${date}
+      </div>
+      <div class="app-time">
+        <i class="fa-solid fa-clock"></i> ${time}
+      </div>
+    </div>
+  `;
+
+  list.prepend(card);
+
+  this.reset();
+
+  alert("✅ Appointment Booked Successfully!");
+});
+
+</script>
+
+</body>
+</html>
