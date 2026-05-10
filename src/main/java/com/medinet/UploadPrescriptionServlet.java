@@ -1,3 +1,4 @@
+package com.medinet;
 import java.io.File;
 import java.io.IOException;
 
