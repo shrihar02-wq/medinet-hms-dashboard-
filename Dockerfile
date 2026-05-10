@@ -6,7 +6,7 @@ COPY . .
 
 RUN mvn clean package
 
-FROM tomcat:10.1-jdk17
+FROM tomcat:9.0-jdk17
 
 COPY --from=build /app/target/ROOT.war /usr/local/tomcat/webapps/ROOT.war
 
