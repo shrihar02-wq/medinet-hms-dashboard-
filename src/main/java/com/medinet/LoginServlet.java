@@ -1,3 +1,5 @@
+package com.medinet;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -38,12 +40,9 @@ public class LoginServlet extends HttpServlet {
 
             PreparedStatement ps = null;
 
-            // DOCTOR LOGIN
-
             if(role.equalsIgnoreCase("doctor")) {
 
                 String query =
-
                 "SELECT * FROM doctor_profile WHERE email=? AND password=?";
 
                 ps = con.prepareStatement(query);
@@ -59,17 +58,13 @@ public class LoginServlet extends HttpServlet {
                     HttpSession session =
                     request.getSession();
 
-                    session.setAttribute(
-                    "email",
-                    email);
+                    session.setAttribute("email", email);
 
                     session.setAttribute(
                     "doctorName",
                     rs.getString("doctor_name"));
 
-                    session.setAttribute(
-                    "role",
-                    role);
+                    session.setAttribute("role", role);
 
                     response.sendRedirect(
                     "doctor-dashboard.jsp");
@@ -78,19 +73,13 @@ public class LoginServlet extends HttpServlet {
                 else {
 
                     response.getWriter().println(
-
-                    "<h2>Invalid Doctor Login</h2>"
-
-                    );
+                    "<h2>Invalid Doctor Login</h2>");
                 }
             }
-
-            // PATIENT LOGIN
 
             else if(role.equalsIgnoreCase("patient")) {
 
                 String query =
-
                 "SELECT * FROM users WHERE email=? AND password=?";
 
                 ps = con.prepareStatement(query);
@@ -106,29 +95,21 @@ public class LoginServlet extends HttpServlet {
                     HttpSession session =
                     request.getSession();
 
-                    session.setAttribute(
-                    "email",
-                    email);
+                    session.setAttribute("email", email);
 
                     session.setAttribute(
                     "patientName",
                     rs.getString("name"));
 
-                    session.setAttribute(
-                    "role",
-                    role);
+                    session.setAttribute("role", role);
 
-                    response.sendRedirect(
-                    "patients.jsp");
+                    response.sendRedirect("patients.jsp");
                 }
 
                 else {
 
                     response.getWriter().println(
-
-                    "<h2>Invalid Patient Login</h2>"
-
-                    );
+                    "<h2>Invalid Patient Login</h2>");
                 }
             }
 
